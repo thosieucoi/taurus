@@ -21,8 +21,8 @@ else
     gsutil cp -s regional build/nsis/*.exe gs://taurus-site/snapshots/
 fi
 
-sed -ri 's/RELEASE_SNAPSHOT/"$STABLE_SNAPSHOT"/' site/dat/docs/Installation.md
-sed -ri 's/UNSTABLE_SNAPSHOT/"$UNSTABLE_SNAPSHOT"/' site/dat/docs/Installation.md
+sed -ri 's/RELEASE_SNAPSHOT/'"$STABLE_SNAPSHOT"'/' site/dat/docs/Installation.md
+sed -ri 's/UNSTABLE_SNAPSHOT/'"$UNSTABLE_SNAPSHOT"'/' site/dat/docs/Installation.md
 
 python site/Taurus/kwindexer.py site/dat/docs site/dat/docs/KeywordIndex.md
 #cp site/dat/docs/img/*.png site/img/
